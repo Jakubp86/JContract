@@ -1,0 +1,51 @@
+﻿@using JContract.Application.Contract;
+@model ContractDto
+
+
+<h1>Dodaj Umowe</h1>
+<br />
+<div class="row">
+    <div class="col-md-4">
+        <form action="/Contract/Create" method="post">
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="FullName">Klient</label>
+                <input class="form-control" type="text" asp-for="FullName">
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="NrUmowy">Numer Umowy</label>
+                <input class="form-control" type="text" asp-for="NrUmowy">
+                <span asp-validation-for="NrUmowy" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="Type">Typ</label>
+                <input class="form-control" type="text" asp-for="Type">
+            </div>
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="PhoneNumber">Telefon</label>
+                <input class="form-control" type="text" asp-for="PhoneNumber">
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="Street">Miejscowość</label>
+                <input class="form-control" type="text" asp-for="Street">
+            </div>
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="City">Ulica</label>
+                <input class="form-control" type="text" asp-for="City">
+            </div>
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="PostalCode">Kod pocztowy</label>
+                <input class="form-control" type="text" asp-for="PostalCode">
+            </div>
+            <div class="form-group mb-3">
+                <input type="submit" value="Dodaj" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
